@@ -68,38 +68,38 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.washing_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serialPortUtil.sendSerialPort(CmdConstance.MACHINE_1);
+                serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
             }
         });
 
         findViewById(R.id.washing_2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serialPortUtil.sendSerialPort(CmdConstance.MACHINE_2);
+                serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
             }
         });
         findViewById(R.id.washing_3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serialPortUtil.sendSerialPort(CmdConstance.MACHINE_3);
+                serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
             }
         });
         findViewById(R.id.washing_4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serialPortUtil.sendSerialPort(CmdConstance.MACHINE_4);
+                serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
             }
         });
         findViewById(R.id.washing_5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serialPortUtil.sendSerialPort(CmdConstance.MACHINE_5);
+                serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
             }
         });
         findViewById(R.id.washing_6).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serialPortUtil.sendSerialPort(CmdConstance.MACHINE_6);
+                serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
             }
         });
     }
