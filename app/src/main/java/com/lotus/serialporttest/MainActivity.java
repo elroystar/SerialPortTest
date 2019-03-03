@@ -68,38 +68,38 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.washing_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
+                serialPortUtil.sendSerialPort("0001");
             }
         });
 
         findViewById(R.id.washing_2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
+                serialPortUtil.sendSerialPort("0002");
             }
         });
         findViewById(R.id.washing_3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
+                serialPortUtil.sendSerialPort("0003");
             }
         });
         findViewById(R.id.washing_4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
+                serialPortUtil.sendSerialPort("0004");
             }
         });
         findViewById(R.id.washing_5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
+                serialPortUtil.sendSerialPort("0005");
             }
         });
         findViewById(R.id.washing_6).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
+                serialPortUtil.sendSerialPort("0006");
             }
         });
     }
@@ -112,6 +112,10 @@ public class MainActivity extends AppCompatActivity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventMainThread(String string) {
         Log.d("C09Activity", "获取到了从传感器发送到Android主板的串口数据");
+        if (string.contains(CmdConstance.REGISTERED)) {
+            String id = string.substring(0, string.length() - 4);
+            serialPortUtil.sendSerialPort(id);
+        }
         Toast.makeText(MainActivity.this, "接收到串口指令：" + string, Toast.LENGTH_SHORT).show();
     }
 
