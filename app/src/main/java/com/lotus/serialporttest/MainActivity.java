@@ -112,6 +112,10 @@ public class MainActivity extends AppCompatActivity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventMainThread(String string) {
         Log.d("C09Activity", "获取到了从传感器发送到Android主板的串口数据");
+        if (string.contains(CmdConstance.REGISTERED)) {
+            String id = string.substring(0, string.length() - 2);
+            serialPortUtil.sendSerialPort(id);
+        }
         Toast.makeText(MainActivity.this, "接收到串口指令：" + string, Toast.LENGTH_SHORT).show();
     }
 
