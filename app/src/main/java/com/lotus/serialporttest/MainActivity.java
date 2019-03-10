@@ -116,6 +116,10 @@ public class MainActivity extends AppCompatActivity {
             String id = string.substring(0, string.length() - 2);
             serialPortUtil.sendSerialPort(id);
         }
+        if (string.contains(CmdConstance.RESET)) {
+            String id = string.substring(0, string.length() - 2);
+            serialPortUtil.sendSerialPort(id);
+        }
         Toast.makeText(MainActivity.this, "接收到串口指令：" + string, Toast.LENGTH_SHORT).show();
     }
 
