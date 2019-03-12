@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
     private SerialPortUtil serialPortUtil;
 
+    private boolean flag = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -137,7 +139,10 @@ public class MainActivity extends AppCompatActivity {
             serialPortUtil.sendSerialPort("01010101");
         }
         if (string.contains(CmdConstance.REGISTER_ASK)) {
-            serialPortUtil.sendSerialPort("01010101");
+            if (flag) {
+                serialPortUtil.sendSerialPort("01010101");
+                flag = false;
+            }
         }
         if (string.contains(CmdConstance.RESET)) {
             serialPortUtil.sendSerialPort("01010101");
