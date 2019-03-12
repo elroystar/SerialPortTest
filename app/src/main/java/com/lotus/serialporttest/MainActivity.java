@@ -23,9 +23,6 @@ public class MainActivity extends AppCompatActivity {
         //注册EventBus
         EventBus.getDefault().register(this);
 
-        serialPortUtil = new SerialPortUtil();
-        serialPortUtil.openSerialPort();
-
         // 返回安卓
         findViewById(R.id.bt_android).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*findViewById(R.id.open).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.open).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 serialPortUtil = new SerialPortUtil();
@@ -51,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 serialPortUtil.closeSerialPort();
             }
-        });*/
+        });
 
         /*findViewById(R.id.fiveThai).setOnClickListener(new View.OnClickListener() {
             @Override
