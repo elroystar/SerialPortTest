@@ -138,6 +138,9 @@ public class MainActivity extends AppCompatActivity {
         if (string.contains("01010101")) {
             serialPortUtil.sendSerialPort("01010101");
         }
+        if (string.equals("010101017D")) {
+            flag = true;
+        }
         if (string.contains(CmdConstance.REGISTER_ASK)) {
             if (flag) {
                 serialPortUtil.sendSerialPort("01010101");
