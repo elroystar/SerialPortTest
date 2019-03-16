@@ -135,20 +135,22 @@ public class MainActivity extends AppCompatActivity {
             String id = string.substring(0, string.length() - 2);
             serialPortUtil.sendSerialPort(id);
         }*/
+        if (string.equals("010101017D")) {
+            flag = true;
+            serialPortUtil.sendSerialPort("01010101");
+            return;
+        }
         if (string.contains("01010101")) {
             serialPortUtil.sendSerialPort("01010101");
         }
-        if (string.equals("010101017D")) {
-            flag = true;
-        }
-        if (string.contains(CmdConstance.REGISTER_ASK)) {
+        if (string.equals(CmdConstance.REGISTER_ASK)) {
             if (flag) {
                 serialPortUtil.sendSerialPort("01010101");
                 flag = false;
             }
         }
-        if (string.contains(CmdConstance.RESET)) {
-            serialPortUtil.sendSerialPort("01010101");
+        if (string.equals(CmdConstance.RESET)) {
+            flag = true;
         }
         Toast.makeText(MainActivity.this, "接收到串口指令：" + string, Toast.LENGTH_SHORT).show();
     }
